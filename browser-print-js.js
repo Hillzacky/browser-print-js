@@ -48,7 +48,13 @@ const Page = {
   },
   print: function (size='a4',layout='portrait',c=true,h=false,f=false){
     window.onbeforeprint =()=> {
-      Page.setStylePrint(size,layout,c,h,f)
+      let el = document.getElementById("flash-print")
+      if(typeof(el) != 'undefined' && el != null){
+        Page.remStylePrint()
+        Page.setStylePrint(size,layout,c,h,f)
+      }else{
+        Page.setStylePrint(size,layout,c,h,f)
+      }
     }
     window.print()
     window.onafterprint =()=> Page.remStylePrint()
