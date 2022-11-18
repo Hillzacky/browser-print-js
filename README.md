@@ -15,4 +15,4 @@ String size = 'a4' \
 String layout = 'portrait' \
 Boolean color = true \
 Boolean header = false \
-Boolean footer = false \
+Boolean footer = false
