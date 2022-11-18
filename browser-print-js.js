@@ -37,19 +37,22 @@ const Page = {
     }
     head.appendChild(style);
   },
-  print: function (size='a4',layout='portrait',c=true,h=false,f=false){
-    window.onbeforeprint = (evt) => {
-      Page.setStylePrint(size,layout,c,h,f);
-    };
-    window.print();
-    window.onafterprint = (evt) => {
-      let fp = document.getElementById('flash-print'),
-      head = document.head || document.getElementsByTagName('head')[0];
-      if (fp.parentNode) {
-        fp.parentNode.removeChild(fp);
-      }else{
-        head.removeChild(fp);
-      }
+  remStylePrint: function (){
+    let fp = document.getElementById('flash-print'),
+    head = document.head || document.getElementsByTagName('head')[0];
+    if (fp.parentNode) {
+      fp.parentNode.removeChild(fp);
+    }else{
+      head.removeChild(fp);
     }
+  },
+  print: function (size='a4',layout='portrait',c=true,h=false,f=false){
+    window.onbeforeprint =()=> {
+      Page.setStylePrint(size,layout,c,h,f)
+    }
+    window.print()
+    window.onafterprint =()=> Page.remStylePrint()
+    window.oncancel =()=> Page.remStylePrint()
+    window.onclose =()=> Page.remStylePrint()
   }
 }
