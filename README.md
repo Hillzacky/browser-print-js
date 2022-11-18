@@ -10,9 +10,9 @@ Page browser print vanilla javascript
 ```
 Page.print(size,layout,color,header,footer)
 ```
-Default
-String size = 'a4'
-String layout = 'portrait'
-Boolean color = true
-Boolean header = false
-Boolean footer = false
+### Default
+String size = 'a4' \
+String layout = 'portrait' \
+Boolean color = true \
+Boolean header = false \
+Boolean footer = false \
