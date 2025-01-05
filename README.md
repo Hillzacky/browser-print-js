@@ -16,3 +16,23 @@ String layout = 'portrait' \
 Boolean color = true \
 Boolean header = false \
 Boolean footer = false
+
+### CSS
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>receipt</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="css/paper-layouts.css">
+  <style>@page { size: 58mm 116mm }</style>
+</head>
+
+<body class="POS-58">
+  <section class="sheet padding-3mm">
+    ...
+  </section>
+</body>
+</html>
+```
